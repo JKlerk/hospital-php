@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Hospital</title>
-	<link rel="stylesheet" href="style.css" type="text/css">
-</head>
-<body>
-	<h1>Hospital</h1>
-	<ul>
-		<li><a href="patients.html">Patiënts</a></li>
-		<li><a href="clients.html">Clients</a></li>
-		<li><a href="species.html">Species</a></li>
-	</ul>
-
 	<h2>Patiënts</h2>
 	<table>
 		<thead>
@@ -25,8 +10,17 @@
 			</tr>
 		</thead>
 		</tbody>
-			<tr>
-				<td>Bobbie</td>
+				<?php
+				foreach ($patients as $patient) {
+					echo "<tr><th> ".$patient['patient_name']." </th>";
+					echo "<th> ".$patient['species_id']." </th>";
+					echo "<th> ".$patient['patient_status']." </th>";
+					echo "<th> ".$patient['client_id']." </th>";
+					echo '<td class="center"><a href="editpatient/'. $patient['patient_id'] .'">edit</a></td>';
+					echo '<td class="center"><a href="deletepatient/'. $patient['patient_id'] .'">delete</a></td></tr>';
+				}
+				?>
+				<!-- <td>Bobbie</td>
 				<td>hond</td>
 				<td>Koorts, eet slecht, blaft veel te veel</td>
 				<td>John Doe</td>
@@ -47,11 +41,8 @@
 				<td>Eet te veel, vetzucht, jankt en kotst</td>
 				<td>John Doe</td>
 				<td class="center"><a href="#">edit</a></td>
-				<td class="center"><a href="#">delete</a></td>
+				<td class="center"><a href="#">delete</a></td> -->
 			</tr>
 		</tbody>
 	</table>
-		<p><a href="#">Create</a></p>
-		<p><a href="index.html">Home</a></p>
-	</body>
-</html>
+	<p><a href="<?= URL ?>hospital/createpatient">Create</a></p>

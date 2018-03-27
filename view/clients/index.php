@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Hospital</title>
-	<link rel="stylesheet" href="style.css" type="text/css">
-</head>
-<body>
-	<h1>Hospital</h1>
-	<ul>
-		<li><a href="patients.html">Patiënts</a></li>
-		<li><a href="clients.html">Clients</a></li>
-		<li><a href="species.html">Species</a></li>
-	</ul>
-
-	<h2>Patiënts</h2>
+	<h2>Clients</h2>
 	<table>
 		<thead>
 			<tr>
@@ -25,7 +10,17 @@
 			</tr>
 		</thead>
 		</tbody>
-			<tr>
+			<?php
+				foreach ($clients as $client) {
+					echo "<tr><th> ".$client['client_firstname']." </th>";
+					echo "<th> ".$client['client_lastname']." </th>";
+					echo "<th>Phone</th>";
+					echo "<th>Email</th>";
+					echo '<td class="center"><a href="editpatient/'. $client['client_id'] .'">edit</a></td>';
+					echo '<td class="center"><a href="deletepatient/'. $client['client_id'] .'">delete</a></td></tr>';
+				}
+			?>
+			<!-- <tr>
 				<td>John</td>
 				<td>Doe</td>
 				<td>0612345678</td>
@@ -40,10 +35,6 @@
 				<td>janedoe@hermail.com</td>
 				<td class="center"><a href="#">edit</a></td>
 				<td class="center"><a href="#">delete</a></td>
-			</tr>
+			</tr> -->
 		</tbody>
 	</table>
-		<p><a href="#">Create</a></p>
-		<p><a href="index.html">Home</a></p>
-	</body>
-</html>
