@@ -13,6 +13,35 @@ function getAllClients() {
 	return $query->fetchAll();
 }
 
+function insertUserClient() {
+	$db = openDatabaseConnection();
+	$name = $_POST['client_firstname'];
+	$lastname = $_POST['client_lastname'];
+	$sql = "INSERT INTO clients (client_firstname, client_lastname) VALUES ('$name', '$lastname')";
+	$query = $db->prepare($sql);
+	$query->execute();
+	$db = null;
+	return $query->fetchAll();
+}
+
+function getClient($id) {
+	$db = openDatabaseConnection();
+	$sql = "SELECT * FROM clients WHERE client_id='$id'";
+	$query = $db->prepare($sql);
+	$query->execute();
+	$db = null;
+	return $query->fetchAll();
+}
+
+function deleteClientDB($id) {
+	$db = openDatabaseConnection();
+	$sql = "DELETE FROM clients WHERE client_id='$id'";
+	$query = $db->prepare($sql);
+	$query->execute();
+	$db = null;
+	return $query->fetchAll();
+}
+
 // Patients------------------------------------------------------------------------------------
 function getAllPatients() {
 	$db = openDatabaseConnection();
@@ -68,3 +97,11 @@ function deletePatientDB($id) {
 }
 
 // Species---------------------------------------------------------------------------------------------
+function getAllSpecies() {
+	$db = openDatabaseConnection();
+	$sql = "SELECT * FROM species";
+	$query = $db->prepare($sql);
+	$query->execute();
+	$db = null;
+	return $query->fetchAll();
+}

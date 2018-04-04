@@ -5,9 +5,7 @@ require(ROOT . "model/HospitalModel.php");
 
 //Global--------------------------------------------------------------------------------------
 function index(){
-	render("hospital/index", array(
-		'patients' => getAllPatients()
-	));
+	render("hospital/index");
 }
 
 //Clients---------------------------------------------------------------------------------------
@@ -15,6 +13,20 @@ function clients(){
 	render("clients/index", array(
 		'clients' => getAllClients()
 	));
+}
+
+function createclient(){
+	render("clients/create");
+}
+
+function insertclient(){
+	insertUserClient();
+	header("Location: /hospital-php/hospital/clients");
+}
+
+function deleteclient($id){
+	deleteClientDB($id);
+	header("Location: /hospital-php/hospital/clients");
 }
 
 // Patients------------------------------------------------------------------------------------
@@ -26,7 +38,7 @@ function patients(){
 
 function postEditPatient($id){
 	editPatientDB($id);
-	// header("Location: /hospital-php/hospital/index");
+	header("Location: /hospital-php/hospital/patients");
 }
 
 function editPatient($id){
@@ -41,17 +53,17 @@ function createpatient(){
 
 function insertpatient(){
 	insertUserPatient();
-	header("Location: /hospital-php/hospital/index");
+	header("Location: /hospital-php/hospital/patients");
 }
 
 function deletepatient($id){
 	deletePatientDB($id);
-	header("Location: /hospital-php/hospital/index");
+	header("Location: /hospital-php/hospital/patients");
 }
 
 // Species------------------------------------------------------------------------------------------
 function species(){
 	render("species/index", array(
-		'patients' => getAllPatients()
+		'species' => getAllSpecies()
 	));
 }

@@ -8,7 +8,15 @@
 			</tr>
 		</thead>
 		</tbody>
-			<tr>
+			<?php
+				foreach ($species as $specie) {
+					echo "<tr><th> ".$specie['species_id']." </th>";
+					echo "<th> ".$specie['species_description']." </th>";
+					echo '<td class="center"><a href="editpatient/'. $specie['species_id'] .'">edit</a></td>';
+					echo '<td class="center"><a href="deletepatient/'. $specie['species_id'] .'">delete</a></td></tr>';
+				}
+			?>
+			<!-- <tr>
 				<td>1</td>
 				<td>hond</td>
 				<td class="center"><a href="#">edit</a></td>
@@ -19,6 +27,6 @@
 				<td>kat</td>
 				<td class="center"><a href="#">edit</a></td>
 				<td class="center"><a href="#">delete</a></td>
-			</tr>
+			</tr> -->
 		</tbody>
 	</table>

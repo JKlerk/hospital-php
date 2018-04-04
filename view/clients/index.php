@@ -16,8 +16,8 @@
 					echo "<th> ".$client['client_lastname']." </th>";
 					echo "<th>Phone</th>";
 					echo "<th>Email</th>";
-					echo '<td class="center"><a href="editpatient/'. $client['client_id'] .'">edit</a></td>';
-					echo '<td class="center"><a href="deletepatient/'. $client['client_id'] .'">delete</a></td></tr>';
+					echo '<td class="center"><a href="editclient/'.$client['client_id'].'">edit</a></td>';
+					echo '<td class="center"><a href="deleteclient/'.$client['client_id'].'">delete</a></td></tr>';
 				}
 			?>
 			<!-- <tr>
@@ -38,3 +38,4 @@
 			</tr> -->
 		</tbody>
 	</table>
+	<p><a href="<?= URL ?>hospital/createclient">Create</a></p>
