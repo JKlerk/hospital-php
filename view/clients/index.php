@@ -16,15 +16,15 @@
 					echo "<th> ".$client['client_lastname']." </th>";
 					echo "<th>Phone</th>";
 					echo "<th>Email</th>";
-					echo '<td class="center"><a href="editclient/'.$client['client_id'].'">edit</a></td>';
-					echo '<td class="center"><a href="deleteclient/'.$client['client_id'].'">delete</a></td></tr>';
+					echo '<td class="center"><a href="edit/'.$client['client_id'].'">edit</a></td>';
+					echo '<td class="center"><a href="delete/'.$client['client_id'].'">delete</a></td></tr>';
 				}
 			?>
 			<!-- <tr>
 				<td>John</td>
 				<td>Doe</td>
 				<td>0612345678</td>
-				<td>johndoe@hismail.com</td>
+				<td>johndoe@hismail.com</td> LOl mooie mail jaja
 				<td class="center"><a href="#">edit</a></td>
 				<td class="center"><a href="#">delete</a></td>
 			</tr>
@@ -38,4 +38,4 @@
 			</tr> -->
 		</tbody>
 	</table>
-	<p><a href="<?= URL ?>hospital/createclient">Create</a></p>
+	<p><a href="<?= URL ?>client/create">Create</a></p>

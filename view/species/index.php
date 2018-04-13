@@ -12,8 +12,8 @@
 				foreach ($species as $specie) {
 					echo "<tr><th> ".$specie['species_id']." </th>";
 					echo "<th> ".$specie['species_description']." </th>";
-					echo '<td class="center"><a href="editpatient/'. $specie['species_id'] .'">edit</a></td>';
-					echo '<td class="center"><a href="deletepatient/'. $specie['species_id'] .'">delete</a></td></tr>';
+					echo '<td class="center"><a href="edit/'. $specie['species_id'] .'">edit</a></td>';
+					echo '<td class="center"><a href="delete/'. $specie['species_id'] .'">delete</a></td></tr>';
 				}
 			?>
 			<!-- <tr>
@@ -30,3 +30,4 @@
 			</tr> -->
 		</tbody>
 	</table>
+	<p><a href="<?= URL ?>species/create">Create</a></p>

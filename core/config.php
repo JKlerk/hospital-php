@@ -13,4 +13,4 @@ define('URL_PROTOCOL', '//');	// Het URL protocol bepaalt of een site via HTTP o
 define('URL_DOMAIN', $_SERVER['HTTP_HOST']);	// Dit bepaald de URL van de website
 define('URL_SUB_FOLDER', str_replace(URL_PUBLIC_FOLDER, '', dirname($_SERVER['SCRIPT_NAME']))); 	// Dit bepaalt de subfolder van de website. Bijvoorbeeld of jij de website op: 127.0.0.1/webapp hebt draaien.
 define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);		// Dit genereerd de standaard URL van de applicatie
-define('DEFAULT_CONTROLLER', 'Hospital'); 	// Standard Controller
+define('DEFAULT_CONTROLLER', 'Patient'); 	// Standard Controller

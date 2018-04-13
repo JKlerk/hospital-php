@@ -13,11 +13,11 @@
 				<?php
 				foreach ($patients as $patient) {
 					echo "<tr><th> ".$patient['patient_name']." </th>";
-					echo "<th> ".$patient['species_id']." </th>";
+					echo "<th> ".$patient['species_description']." </th>";
 					echo "<th> ".$patient['patient_status']." </th>";
-					echo "<th> ".$patient['client_id']." </th>";
-					echo '<td class="center"><a href="editpatient/'. $patient['patient_id'] .'">edit</a></td>';
-					echo '<td class="center"><a href="deletepatient/'. $patient['patient_id'] .'">delete</a></td></tr>';
+					echo "<th> ".$patient['client_firstname']." </th>";
+					echo '<td class="center"><a href="edit/'. $patient['patient_id'] .'">edit</a></td>';
+					echo '<td class="center"><a href="delete/'. $patient['patient_id'] .'">delete</a></td></tr>';
 				}
 				?>
 				<!-- <td>Bobbie</td>
@@ -45,4 +45,4 @@
 			</tr>
 		</tbody>
 	</table>
-	<p><a href="<?= URL ?>hospital/createpatient">Create</a></p>
+	<p><a href="<?= URL ?>patient/create">Create</a></p>
