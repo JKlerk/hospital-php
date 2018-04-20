@@ -65,7 +65,7 @@ function editPatientDB($id) {
 
 function deletePatient($id) {
 	$db = openDatabaseConnection();
-	$sql = "DELETE FROM patients WHERE patient_id=$id";
+	$sql = "DELETE FROM patients WHERE patient_id=:id";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		":id" => $id
