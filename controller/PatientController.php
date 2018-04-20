@@ -12,7 +12,7 @@ function index(){
 
 function editPatient($id){
 	editPatientDB($id);
-	//header("Location: /hospital-php/patient/index");
+	header("Location: /hospital-php/patient/index");
 }
 
 function edit($id){
@@ -25,8 +25,8 @@ function edit($id){
 
 function create(){
 	render("patients/create", array(
-		"resultC" => selectClientC(),
-		"resultS" => selectSpeciesC()
+		"resultC" => getAllClients(),
+		"resultS" => getAllSpecies()
 	));
 }
 

@@ -13,22 +13,26 @@ function insertClient() {
 	$db = openDatabaseConnection();
 	$name = $_POST['client_firstname'];
 	$lastname = $_POST['client_lastname'];
-	$sql = "INSERT INTO clients (client_firstname, client_lastname) VALUES ('$name', '$lastname')";
+	$sql = "INSERT INTO clients (client_firstname, client_lastname) VALUES (:name, :lastname)";
 	$query = $db->prepare($sql);
-	$query->execute();
+	$query->execute(array(
+		":name" => $name,
+		":lastname" => $lastname
+	));
 	$db = null;
 	return $query->fetchAll();
 }
 
 function editClientDB($id) {
 	$db = openDatabaseConnection();
-	$patientName = $_POST['patient_name'];
-	$patientSpieces = $_POST['species_id'];
-	$sql = "UPDATE patients SET client_firstname=':clientFirstname', client_lastname=':clientLastname' WHERE patient_id='$id'";
+	$clientFirstname = $_POST['client_firstname'];
+	$clientLastname = $_POST['client_lastname'];
+	$sql = "UPDATE clients SET client_firstname=:clientFirstname, client_lastname=:clientLastname WHERE client_id=:id";
 	$query = $db->prepare($sql);
 	$query->execute(array(    
-        ":clientFirstname" => $patientName,
-        ":clientLastname" => $patientSpieces     
+        ":clientFirstname" => $clientFirstname,
+        ":clientLastname" => $clientLastname,
+        ":id" => $id   
     ));
 	$db = null;
 	return $query->fetchAll();
@@ -36,32 +40,27 @@ function editClientDB($id) {
 
 function getClient($id) {
 	$db = openDatabaseConnection();
-	$sql = "SELECT * FROM clients WHERE client_id='$id'";
+	$sql = "SELECT * FROM clients WHERE client_id=:id";
 	$query = $db->prepare($sql);
-	$query->execute();
+	$query->execute(array(
+		":id" => $id
+	));
 	$db = null;
 	return $query->fetchAll();
 }
 
 function deleteClient($id) {
 	$db = openDatabaseConnection();
-	$sql = "DELETE FROM clients WHERE client_id='$id'";
+	$sql = "DELETE FROM clients WHERE client_id=:id";
 	$query = $db->prepare($sql);
-	$query->execute();
+	$query->execute(array(
+		":id" => $id
+	));
 	$db = null;
 	return $query->fetchAll();
 }
 
 function selectClient($id) {
-	$db = openDatabaseConnection();
-	$sql = "SELECT * FROM clients";
-	$query = $db->prepare($sql);
-	$query->execute();
-	$db = null;
-	return $query->fetchAll();
-}
-
-function selectClientC() {
 	$db = openDatabaseConnection();
 	$sql = "SELECT * FROM clients";
 	$query = $db->prepare($sql);

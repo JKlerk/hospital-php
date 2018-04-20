@@ -1,14 +1,6 @@
 <?php
 
-function selectSpecies($id) {
-	$db = openDatabaseConnection();
-	$sql = "SELECT * FROM species";
-	$query = $db->prepare($sql);
-	$query->execute();
-	$db = null;
-	return $query->fetchAll();
-}
-function selectSpeciesC() {
+function getAllSpecies() {
 	$db = openDatabaseConnection();
 	$sql = "SELECT * FROM species";
 	$query = $db->prepare($sql);
@@ -17,7 +9,7 @@ function selectSpeciesC() {
 	return $query->fetchAll();
 }
 
-function getAllSpecies() {
+function selectSpecies($id) {
 	$db = openDatabaseConnection();
 	$sql = "SELECT * FROM species";
 	$query = $db->prepare($sql);
@@ -29,18 +21,22 @@ function getAllSpecies() {
 function insertSpecies() {
 	$db = openDatabaseConnection();
 	$species = $_POST['species_description'];
-	$sql = "INSERT INTO species (species_description) VALUES ('$species')";
+	$sql = "INSERT INTO species (species_description) VALUES (:species)";
 	$query = $db->prepare($sql);
-	$query->execute();
+	$query->execute(array(
+		":species" => $species 
+	));
 	$db = null;
 	return $query->fetchAll();
 }
 
 function getSpecies($id) {
 	$db = openDatabaseConnection();
-	$sql = "SELECT * FROM species WHERE species_id='$id'";
+	$sql = "SELECT * FROM species WHERE species_id=:id";
 	$query = $db->prepare($sql);
-	$query->execute();
+	$query->execute(array(
+		":id" => $id 
+	));
 	$db = null;
 	return $query->fetchAll();
 }
@@ -48,18 +44,23 @@ function getSpecies($id) {
 function editSpeciesDB($id) {
 	$db = openDatabaseConnection();
 	$description = $_POST['species_description'];
-	$sql = "UPDATE species SET species_description='$description' WHERE species_id='$id'";
+	$sql = "UPDATE species SET species_description=:description WHERE species_id=:id";
 	$query = $db->prepare($sql);
-	$query->execute();
+	$query->execute(array(
+		":description" => $description,
+		":id" => $id
+	));
 	$db = null;
 	return $query->fetchAll();
 }
 
 function deleteSpecies($id) {
 	$db = openDatabaseConnection();
-	$sql = "DELETE FROM species WHERE species_id='$id'";
+	$sql = "DELETE FROM species WHERE species_id=:id";
 	$query = $db->prepare($sql);
-	$query->execute();
+	$query->execute(array(
+		":id" => $id
+	));
 	$db = null;
 	return $query->fetchAll();
 }
