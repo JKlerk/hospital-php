@@ -7,7 +7,7 @@
 		<?php
 			foreach ($resultS as $species) {
 				echo '<option ';
-				if ($species['species_id'] == $resultP[0]['client_id']) {
+				if ($species['species_id'] == $resultP[0]['species_id']) {
 					echo "selected";
 				}
 				echo ' value=" '. $species['species_id'] .'">';

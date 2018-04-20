@@ -48,8 +48,6 @@ function editPatientDB($id) {
 	$patientStatus = $_POST['patient_status'];
 	$patientClient = $_POST['client_id'];
 	$sql = "UPDATE patients 
-			INNER JOIN species ON patients.species_id = species.species_id 
-			INNER JOIN clients ON patients.client_id = clients.client_id 
 			SET patient_name='$patientName', species_id='$patientSpieces', patient_status='$patientStatus', client_id='$patientClient' WHERE patient_id='$id'";
 	$query = $db->prepare($sql);
 	$query->execute();

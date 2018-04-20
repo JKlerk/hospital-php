@@ -1,5 +1,5 @@
 <form action="<?= URL ?>patient/insert" method="POST">
-	<h1>Vul gegevens in</h1>
+<h1>Vul gegevens in</h1>
 <h2>Naam <input required="true" autocomplete="off" type="text" name="patient_name"></h2>
 
 <h2>Species
