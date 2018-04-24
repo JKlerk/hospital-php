@@ -4,6 +4,7 @@
 				<th>Name</th>
 				<th>Species</th>
 				<th>Status</th>
+				<th>Sex</th>
 				<th>Client</th>
 				<th colspan="2">Action</th>
 			</tr>
@@ -12,6 +13,7 @@
 					echo "<tr><th> ".$patient['patient_name']." </th>";
 					echo "<th> ".$patient['species_description']." </th>";
 					echo "<th> ".$patient['patient_status']." </th>";
+					echo "<th> ".$patient['patient_sex']." </th>";
 					echo "<th> ".$patient['client_firstname']." </th>";
 					echo '<td class="center"><a href="edit/'. $patient['patient_id'] .'">edit</a></td>';
 					echo '<td class="center"><a href="delete/'. $patient['patient_id'] .'">delete</a></td></tr>';

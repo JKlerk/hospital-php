@@ -147,3 +147,12 @@ input[type=submit]:hover {
     background-color: #f2f2f2;
     padding: 20px;
 }
+
+select{
+  height: 50px;
+}
+
+input{
+  height: 50px;
+  font-size: 18px;
+}
