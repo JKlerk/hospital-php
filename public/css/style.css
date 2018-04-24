@@ -3,6 +3,10 @@ body {
 	width : 700px;
 }
 
+#arrowdown{
+  display: none;
+}
+
 table {
 	width : 700px;
 }

@@ -1,46 +1,40 @@
-<h2>Patiënts</h2>
-	<table>
-			<tr>
-				<th>Name</th>
-				<th>Species</th>
-				<th>Status</th>
-				<th>Sex</th>
-				<th>Client</th>
-				<th colspan="2">Action</th>
-			</tr>
-				<?php
-				foreach ($patients as $patient) {
-					echo "<tr><th> ".$patient['patient_name']." </th>";
-					echo "<th> ".$patient['species_description']." </th>";
-					echo "<th> ".$patient['patient_status']." </th>";
-					echo "<th> ".$patient['patient_sex']." </th>";
-					echo "<th> ".$patient['client_firstname']." </th>";
-					echo '<td class="center"><a href="edit/'. $patient['patient_id'] .'">edit</a></td>';
-					echo '<td class="center"><a href="delete/'. $patient['patient_id'] .'">delete</a></td></tr>';
-				}
-				?>
-				<!-- <td>Bobbie</td>
-				<td>hond</td>
-				<td>Koorts, eet slecht, blaft veel te veel</td>
-				<td>John Doe</td>
-				<td class="center"><a href="#">edit</a></td>
-				<td class="center"><a href="#">delete</a></td>
-			</tr>
-			<tr>
-				<td>Minoes</td>
-				<td>kat</td>
-				<td>Drinkt niet, haaruitval, mager</td>
-				<td>Jane Doe</td>
-				<td class="center"><a href="#">edit</a></td>
-				<td class="center"><a href="#">delete</a></td>
-			</tr>
-			<tr>
-				<td>Kees</td>
-				<td>hond</td>
-				<td>Eet te veel, vetzucht, jankt en kotst</td>
-				<td>John Doe</td>
-				<td class="center"><a href="#">edit</a></td>
-				<td class="center"><a href="#">delete</a></td> -->
-			</tr>
-	</table>
-	<p><a href="<?= URL ?>patient/create">Create</a></p>
+<h2>Patients</h2>
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th name='name'>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Gender</th>
+            <th>Client</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            <?php
+            foreach ($patients as $patient) {
+                echo "<tr>";
+                echo "<td>" . $patient['patient_name'] . "</td>";
+                echo "<td>" . $patient['species_description'] . "</td>";
+                echo "<td>" . $patient['patient_status'] . "</td>";
+                echo "<td>" . $patient['patient_sex'] . "</td>";
+                echo "<td>" . $patient['client_firstname'] . "</td>";
+                echo "<td><a href='edit/" . $patient['patient_id'] . "'>edit</a></td>";
+                echo "<td><a href='delete/" . $patient['patient_id'] . "'>delete</a></td>";
+                echo "</tr>";
+            }
+        ?>
+    </tbody>
+</table>
+<p><a href="<?= URL ?>patient/create">Create</a></p>
+<script>
+		$(document).ready( function () {
+    		$('#myTable').DataTable({
+    			"searching": false,
+    			"lengthChange": false,
+    			"paging": false,
+    			"columnDefs": [{ "orderable": false, "targets": 5 }, { "orderable": false, "targets": 6 }],
+    		});
+		});
+</script>
