@@ -4,8 +4,7 @@
 		<tr>
 			<th>Firstname</th>
 			<th>Lastname</th>
-			<th></th>
-			<th></th>
+			<th colspan="2"></th>
 		</tr>
 	</thead>
 	<tbody>

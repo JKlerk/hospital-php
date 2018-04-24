@@ -3,8 +3,7 @@
 	<thead>
 		<tr>
 			<th>Description</th>
-			<th></th>
-			<th></th>
+			<th colspan="2"></th>
 		</tr>
 	</thead>
 	<tbody>

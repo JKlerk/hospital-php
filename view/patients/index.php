@@ -7,8 +7,7 @@
             <th>Status</th>
             <th>Gender</th>
             <th>Client</th>
-            <th></th>
-            <th></th>
+            <th colspan="2"></th>
         </tr>
     </thead>
     <tbody>
