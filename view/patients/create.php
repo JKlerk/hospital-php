@@ -15,7 +15,17 @@
 	</select>
 </h2>
 
-<h2>Patient Status <input autocomplete="off" class="textfield" required="true" type="text" name="patient_status"></h2>
+<h2 class="margintop">Sex</h2>
+
+<h5 class="radio">Male 
+	<input class="radiobutton" required="true" type="radio" value="Male" name="patient_sex">
+</h5>
+
+<h5 class="radio">Female
+	<input class="radiobutton" required="true" type="radio" value="Female" name="patient_sex">
+</h5>
+
+<h2 class="margintop">Patient Status <input autocomplete="off" class="textfield" required="true" type="text" name="patient_status"></h2>
 
 <h2>Client
 	<select name="client_id">

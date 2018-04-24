@@ -19,7 +19,28 @@
 	</select>
 </h2>
 
-<h2>Patient Status <input autocomplete="off" class="textfield" required="true" type="text" name="patient_status" value="<?php echo $resultP[0]['patient_status']; ?>"></h2>
+<h2>Sex</h2>
+
+<h5 class="radio">Male 
+	<input class="radiobutton" required="true" type="radio"
+	<?php
+	if ($resultP[0]['patient_sex'] == "Male") {
+		echo "checked";
+	}
+	?>
+	value="Male" name="patient_sex">
+</h5>
+
+<h5 class="radio">Female
+	<input class="radiobutton" required="true" type="radio"
+	<?php
+	if ($resultP[0]['patient_sex'] == "Female") {
+		echo "checked";
+	}
+	?>
+	value="Female" name="patient_sex">
+</h5>
+<h2 class="margintop">Patient Status <input autocomplete="off" class="textfield" required="true" type="text" name="patient_status" value="<?php echo $resultP[0]['patient_status']; ?>"></h2>
 
 <h2>Client
 	<select name='client_id'>
