@@ -1,6 +1,5 @@
-	<h2>Patiënts</h2>
+<h2>Patiënts</h2>
 	<table>
-		<thead>
 			<tr>
 				<th>Name</th>
 				<th>Species</th>
@@ -8,8 +7,6 @@
 				<th>Client</th>
 				<th colspan="2">Action</th>
 			</tr>
-		</thead>
-		</tbody>
 				<?php
 				foreach ($patients as $patient) {
 					echo "<tr><th> ".$patient['patient_name']." </th>";
@@ -43,6 +40,5 @@
 				<td class="center"><a href="#">edit</a></td>
 				<td class="center"><a href="#">delete</a></td> -->
 			</tr>
-		</tbody>
 	</table>
 	<p><a href="<?= URL ?>patient/create">Create</a></p>
