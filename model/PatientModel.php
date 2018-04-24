@@ -27,11 +27,12 @@ function insertPatient() {
         ":patientStatus" => $patientStatus      
     ));
     $db = null;
+    return $query->fetchAll();
 }
 
 function getPatient($id) {
 	$db = openDatabaseConnection();
-	$sql = "SELECT * FROM patients 
+	$sql = "SELECT * FROM patients
 			JOIN species ON patients.species_id = species.species_id 
 			JOIN clients ON patients.client_id = clients.client_id 
 			WHERE patient_id=:id";
