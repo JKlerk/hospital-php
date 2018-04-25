@@ -18,7 +18,7 @@
 		?>
 	</tbody>
 </table>
-<p><a href="<?= URL ?>client/create">Create</a></p>
+<p><a href="<?= URL ?>client/create">Create Client</a></p>
 <script>
 		$(document).ready( function () {
     		$('#myTable').DataTable({

@@ -16,7 +16,7 @@
 		?>
 	</tbody>
 </table>
-<p><a href="<?= URL ?>species/create">Create</a></p>
+<p><a href="<?= URL ?>species/create">Create Species</a></p>
 <script>
 		$(document).ready( function () {
     		$('#myTable').DataTable({

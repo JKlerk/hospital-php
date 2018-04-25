@@ -26,7 +26,7 @@
         ?>
     </tbody>
 </table>
-<p><a href="<?= URL ?>patient/create">Create</a></p>
+<p><a href="<?= URL ?>patient/create">Create Patient</a></p>
 <script>
 		$(document).ready( function () {
     		$('#myTable').DataTable({
