@@ -7,7 +7,6 @@ define('DB_NAME', 'hospital'); // Database Name
 define('DB_USER', 'root'); 		// Database Username
 define('DB_PASS', 'password');	// Database Password
 define('DB_CHARSET', 'utf8'); 	// CharSet
-
 define('URL_PUBLIC_FOLDER', 'public');	// De public folder is de folder waar alle bestanden in staan die via de adresbalk direct aangevraagd kunnen worden, denk aan CSS, JS, afbeeldingen etc...
 define('URL_PROTOCOL', '//');	// Het URL protocol bepaalt of een site via HTTP of HTTPS wordt opgevraagd. Bij '//' wordt de gebruikte methode gebruikt
 define('URL_DOMAIN', $_SERVER['HTTP_HOST']);	// Dit bepaald de URL van de website
