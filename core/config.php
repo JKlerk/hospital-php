@@ -1,5 +1,4 @@
 <?php
-
 // Database instellingen
 define('DB_TYPE', 'mysql');		// Database type
 define('DB_HOST', '127.0.0.1'); // IP Adress
